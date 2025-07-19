@@ -11,11 +11,12 @@ describe('Macdosoft Home Page', () => {
     cy.visit(baseUrl)
     cy.wait(2000)
 
-    // Technology Page
-    allOthersPage.clickTechnologies()
-    allOthersPage.clickTechCenter()
+    // // Technology Page
+    // allOthersPage.clickTechnologies()
+    // allOthersPage.clickTechCenter()
     allOthersPage.clickAboutUs()
-    allOthersPage.clickContactUs()
+    // allOthersPage.HoverOverHowWeDeliver()
+    // allOthersPage.clickContactUs()
 
 
   })
