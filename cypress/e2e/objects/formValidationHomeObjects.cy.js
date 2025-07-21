@@ -13,6 +13,13 @@ class formValidationHomeObjects{
         cy.get(this.submit).click()
     }
 
+    emailField(testCase){
+        cy.get(this.nmae).type("Test Nmae")
+        cy.get(this.email).type(testCase.input)
+        cy.get(this.description).type('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+        cy.get(this.submit).click()
+    }
+
 
 
 
