@@ -92,3 +92,32 @@ describe('Email Field Validation', () => {
     });
   });
 });
+
+
+// For Description Field
+
+//   const descriptionTestCases= [
+//   { input: 'plainaddress', expectedError: 'Please enter a valid email address' },
+//   { input: '@missinglocal.com', expectedError: 'Please enter a valid email address' },
+//   { input: 'username@.com', expectedError: 'Please enter a valid email address' },
+
+//     ];
+// describe('Email Field Validation', () => {
+//   descriptionTestCases.forEach((testCase, index) => {
+//     it(`Test ${index + 1}: Name = "${testCase.input}"`, () => {
+//       cy.visit('https://macdosoft.com/')
+
+//     formValidationHome.descriptionFeild(testCase)
+
+//       if (testCase.expectedError) {
+//         cy.contains(testCase.expectedError)
+//       } 
+//       else {
+        
+//         cy.contains('Failed to submit your quote request. Please try again.').should('be.visible'); 
+//       }
+      
+//     });
+//   });
+// });
+

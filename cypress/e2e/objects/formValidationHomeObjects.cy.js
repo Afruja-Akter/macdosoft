@@ -20,8 +20,12 @@ class formValidationHomeObjects{
         cy.get(this.submit).click()
     }
 
-
-
+    // descriptionFeild(testcase){
+    //     cy.get(this.nmae).type("Test Nmae")
+    //     cy.get(this.email).type(test@gmail.com)
+    //     cy.get(this.description).type(testCase.input)
+    //     cy.get(this.submit).click()
+    // }
 
 
 }
