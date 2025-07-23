@@ -30,23 +30,23 @@ const nameTestCases = [
 ];
 
 
-describe('Name field Validation', () => {
-    nameTestCases.forEach((testCase, index) => {
-        it(`Test ${index + 1}: Name = "${testCase.input}"`, () => {
-            cy.visit('https://macdosoft.com/')
+describe('Name Field Validation', () => {
+  nameTestCases.forEach((testCase, index) => {
+    it(`Test ${index + 1}: Name = "${testCase.input}"`, () => {
+      cy.visit('https://macdosoft.com/')
 
-            formValidationAbout.formValidName()
+    formValidationAbout.clickAbout()
 
+    formValidationAbout.formValidName(testCase)
 
-            if (testCase.expectedError) {
-                cy.contains(testCase.expectedError)
-            }
-            else {
-
-                cy.contains('Failed to submit your quote request. Please try again.').should('be.visible');
-            }
-        })
-
-    })
-
-}) 
+      if (testCase.expectedError) {
+        cy.contains(testCase.expectedError)
+      } 
+      else {
+        
+        cy.contains('Failed to submit your quote request. Please try again.').should('be.visible'); 
+      }
+      
+    });
+  });
+});
