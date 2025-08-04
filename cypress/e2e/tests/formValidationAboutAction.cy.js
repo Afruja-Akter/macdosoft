@@ -3,7 +3,7 @@ import formValidationAboutObjects from "../objects/formValidationAboutObjects.cy
 
 const formValidationAbout = new formValidationAboutObjects()
 
-const nameTestCases = [
+/*const nameTestCases = [
     //  {input: '  ',expectedError:'Name is required'}
     { input: '123456', expectedError: 'Name cannot contain emojis or special characters' },
     { input: '@username', expectedError: 'Name can only contain letters, spaces, and dots' },
@@ -35,9 +35,8 @@ describe('Name Field Validation', () => {
     it(`Test ${index + 1}: Name = "${testCase.input}"`, () => {
       cy.visit('https://macdosoft.com/')
 
-    formValidationAbout.clickAbout()
-
-    formValidationAbout.formValidName(testCase)
+       formValidationAbout.clickAbout()
+       formValidationAbout.formValidName(testCase)
 
       if (testCase.expectedError) {
         cy.contains(testCase.expectedError)
@@ -49,4 +48,51 @@ describe('Name Field Validation', () => {
       
     });
   });
+});*/
+
+const emailTestCases = [
+  { input: 'plainaddress', expectedError: 'Please enter a valid email address' },
+  { input: '@missinglocal.com', expectedError: 'Please enter a valid email address' },
+  { input: 'username@.com', expectedError: 'Please enter a valid email address' },
+  { input: 'username@com', expectedError: 'Please enter a valid email address' },
+  { input: 'username@domain..com', expectedError: 'Please enter a valid email address' },
+  { input: 'username@domain,com', expectedError: 'Please enter a valid email address' },
+  { input: 'username@domain@another.com', expectedError: 'Email cannot contain multiple @ symbols' },
+  { input: 'username@domain.c', expectedError: 'Please enter a valid email address' },
+  { input: '.username@email.com', expectedError: 'Please enter a valid email address' },
+  { input: 'username@-domain.com', expectedError: 'Please enter a valid email address' },
+  { input: 'username@domain-.com', expectedError: 'Please enter a valid email address' },
+  { input: 'username@domain..co.uk', expectedError: 'Please enter a valid email address' },
+  { input: '"username"@domain.com', expectedError: 'Please enter a valid email address' },
+  { input: 'user@name@domain.com', expectedError: 'Email cannot contain multiple @ symbols' },
+  { input: 'username@.sub.domain.com', expectedError: 'Please enter a valid email address' },
+  { input: 'user..name@domain.com', expectedError: 'Please enter a valid email address' },
+  { input: 'user_name@domain..com', expectedError: 'Please enter a valid email address' },
+  { input: 'user@domain#$.com', expectedError: 'Please enter a valid email address' },
+  { input: 'user@[192.168.1.1]', expectedError: 'Please enter a valid email address' }
+
+];
+
+
+describe('Email Field Validation', () => {
+  emailTestCases.forEach((testCase, index) => {
+    it(`Test ${index + 1}: Name = "${testCase.input}"`, () => {
+      cy.visit('https://macdosoft.com/')
+
+      formValidationAbout.clickAbout()
+      formValidationAbout.formValidEmail(testCase)
+
+      if (testCase.expectedError) {
+        cy.contains(testCase.expectedError)
+      }
+      else {
+
+        cy.contains('Failed to submit your quote request. Please try again.').should('be.visible');
+      }
+
+    });
+  });
 });
+
+
+
