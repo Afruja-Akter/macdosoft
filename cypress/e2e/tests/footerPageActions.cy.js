@@ -1,6 +1,7 @@
-import footerObjects from "../objects/footerObjects.cy";
+import footerPageObjects from "../objects/footerPageObjects.cy"
 
-const footer = new footerObjects()
+
+const footer = new footerPageObjects()
 
 describe('Macdosoft Footer Section', () =>{
     it('Footer Section Visit', () =>{

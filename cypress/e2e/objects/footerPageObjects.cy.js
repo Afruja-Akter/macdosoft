@@ -1,4 +1,4 @@
-class footerObjects{
+class footerPageObjects{
 
     clickCustomSoftwareSolutions(){
         cy.contains('Custom Software Solutions').click()
@@ -304,4 +304,4 @@ class footerObjects{
 
 
 }
-export default footerObjects;
+export default footerPageObjects;
