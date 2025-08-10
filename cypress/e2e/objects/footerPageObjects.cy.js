@@ -274,7 +274,7 @@ class footerPageObjects{
     }
     // Maintenance & Support
     click247Support(){
-        cy.contains('24/7 Support').click()
+        cy.xpath("//span[normalize-space()='24/7 Support']").click()
         cy.wait(1000)
     }
     clickHome(){
@@ -298,7 +298,35 @@ class footerPageObjects{
         cy.wait(1000)
     }
 
-
+    // Footer Search
+    clickWhatWeDo(){
+        cy.contains('What We Do').click()
+        cy.wait(1000)
+    }
+    clickTechnology(){
+        cy.contains('Technology We Use').click()
+        cy.wait(1000)
+    }
+    clickTalkToUs(){
+        cy.contains('Talk to Us').click()
+        cy.wait(1000)
+    }
+    clickPrivacyPolicy(){
+        cy.contains('Privacy Policy').click()
+        cy.wait(1000)
+    }
+    clickTermsConditions(){
+        cy.contains('Terms & Conditions').click()
+        cy.wait(1000)
+    }
+    clickCookiePolicy(){
+        cy.contains('Cookie Policy').click()
+        cy.wait(1000)
+    }
+    clickSitemap(){
+        cy.contains('Sitemap').click()
+        cy.wait(1000)
+    }
 
 
 
